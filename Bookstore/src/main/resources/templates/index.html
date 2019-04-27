@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <!--    <meta name="viewport" content="width=device-width, initial-scale=1"/>-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1"/>-->
 
     <title>Navbar Template for Bootstrap</title>
 
@@ -12,6 +12,8 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/style.css" rel="stylesheet"/>
+
+    <link href="/css/non-responsive.css" rel="stylesheet"/>
 
     <link rel="icon" href="/images/apple-touch-icon.png"/>
 
@@ -25,38 +27,30 @@
 <nav class="navbar navbar-default navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Project name</a>
+            <a class="navbar-brand" href="#">ALDO'S BOOKSTORE </a>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+        <div id="navbar">
+            <ul class="nav navbar-nav navbar-left">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                       aria-expanded="false">Dropdown <span class="caret"></span></a>
+                       aria-expanded="false">BOOKS<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="#">Browse the bookshelf</a></li>
+                        <li><a href="#">Store hours &#38; Directions</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </li>
+                <form class="navbar-form">
+                    <div class="form-group">
+                        <input type="text" name="keyword" class="form-control" placeholder="Book title"/>
+                        <button type="submit" class="btn btn-default">Search</button>
+                    </div>
+                </form>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
-                <li><a href="../navbar-static-top/">Static top</a></li>
-                <li><a href="../navbar-fixed-top/">Fixed top</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>  SHOPPING CART</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>  MY ACCOUNT</a></li>
+                <li><a href="#">LOG OUT</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div><!--/.container-fluid -->

@@ -1,9 +1,19 @@
 package com.bookstore.Bookstore.domain;
 
+import com.bookstore.Bookstore.domain.security.Authority;
+import com.bookstore.Bookstore.domain.security.UserRole;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.security.config.core.GrantedAuthorityDefaults;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -19,6 +29,38 @@ public class User {
     private String phone;
     private boolean enabled = true;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private Set<UserRole> userRoles = new HashSet<>();
+
+    /**
+     * Security methods implemented from UserDetails interface
+     * Return all authorities of a specified user
+     * @return authorities
+     */
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        Set<GrantedAuthority> authorities = new HashSet<>();
+        userRoles.forEach(ur -> authorities.add(new Authority(ur.getRole().getName())));
+        return authorities;
+    }
+
+    // TODO:
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+    // TODO:
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    // TODO:
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
 
     public Long getId() {
         return id;
@@ -82,6 +124,14 @@ public class User {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public Set<UserRole> getUserRoles() {
+        return userRoles;
+    }
+
+    public void setUserRoles(Set<UserRole> userRoles) {
+        this.userRoles = userRoles;
     }
 
     @Override

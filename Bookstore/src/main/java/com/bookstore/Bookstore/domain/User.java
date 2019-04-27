@@ -3,7 +3,6 @@ package com.bookstore.Bookstore.domain;
 import com.bookstore.Bookstore.domain.security.Authority;
 import com.bookstore.Bookstore.domain.security.UserRole;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.springframework.security.config.core.GrantedAuthorityDefaults;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

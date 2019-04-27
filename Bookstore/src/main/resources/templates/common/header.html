@@ -48,21 +48,19 @@
                     </form>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> SHOPPING
+                    <li><a href="#"><i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i> SHOPPING
                         CART</a>
                     </li>
-                    <li><a href="/myAccount"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> MY ACCOUNT</a>
+                    <li><a th:href="@{/login}"><i class="glyphicon glyphicon-user" aria-hidden="true"></i> MY ACCOUNT</a>
                     </li>
-                    <li><a href="#"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>  LOG OUT</a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-log-out" aria-hidden="true"></i>  LOG OUT</a></li>
                 </ul>
             </div><!--/.nav-collapse -->
         </div><!--/.container-fluid -->
     </nav>
 </div>
 <div th:fragment="body-bottom-scripts">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
-            integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-            crossorigin="anonymous"></script>
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
 </div>
 </body>

@@ -17,6 +17,8 @@
     <properties>
         <java.version>1.8</java.version>
         <swagger.version>2.9.2</swagger.version>
+        <docker.image.name>bookstore</docker.image.name>
+        <docker.repository.username>alushkja</docker.repository.username>
     </properties>
 
     <dependencies>
@@ -113,6 +115,19 @@
 <!--                    </processTypes>-->
 <!--                </configuration>-->
 <!--            </plugin>-->
+
+            <!-- JIB Create Docker Images-->
+            <plugin>
+                <groupId>com.google.cloud.tools</groupId>
+                <artifactId>jib-maven-plugin</artifactId>
+                <version>0.10.1</version>
+                <configuration>
+                    <to>
+                        <image>${docker.repository.username}/${docker.image.name}:${project.version}</image>
+                    </to>
+                </configuration>
+            </plugin>
+
         </plugins>
     </build>
 

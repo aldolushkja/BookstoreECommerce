@@ -33,7 +33,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             "/js/**",
             "/images/**",
             "/",
-            "/myAccount"
+            "/myAccount",
+            "/swagger-ui.html"
     };
 
     @Override
